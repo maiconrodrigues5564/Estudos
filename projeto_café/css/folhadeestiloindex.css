@@ -3,91 +3,259 @@
     padding: 0;
 }
 
-/* Definir as propriedades do topo */
-
-/*.container-principal {
-    /*display: grid;
-    grid-template-columns: 2;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: brown;
-}*/
-
-/* Definir as propriedades do topo */
-
- header {
-    /*display: flex;
-    justify-content: space-between;
-    /*width: 100%;
-   /* height: 100px;*/
-    background-color: rgb(105, 19, 19);
-   /* position: relative;
-    top: 0; */
+@font-face {
+    font-family: 'coffee';
+    src: url('fonts/TEXASTANGO EXTRA ROTH PERSONAL USE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+html, body {
+    width: 100%;
+    height: 100vh;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+}
 
-/* Definir as propriedades do logo*/
+#hide{
+    /*width: 100%;
+    /*min-width: 100vh;
+    background-image: url(../imagens/historia-do-cafe-310518-c.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
+}
+
+.container {
+    background-color: #793315d8;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+/* Definir as propriedades do topo */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    animation: gradient 10s ease alternate infinite;
+    background: linear-gradient(-40deg, #DFBA61, #8D4218,  #733214, #37190B, #1A1819 ) no-repeat;
+    background-size: 300% 300%;
+    border-radius: 10px;
+}
 
 .logo {
+    opacity: 0.8;
+}
+
+.logo:hover {
+    opacity: 0.2;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.menu ul {
     display: flex;
-    justify-content: flex-start;
-    /*position: absolute;*/
-    /*width: 50px;
-    height: auto;*/
+    border-radius: 60px 0px 60px 0px
 }
 
-.logo img {
-    display: flex;
-    justify-content: start;
-    /*width: 90%;
-   /* margin-left: 10%;*/
+li {
+    margin: 10px;
+    /*background-color: #8D4218;*/
 }
 
-nav {
-   /* display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    align-self: flex-end;
-    align-items: flex-end;
-   /* position: absolute;
-    right: 30px;
-    bottom: 0px;*/
+ul {
+    /*list-style-type: none;*/
+    background: linear-gradient(-45deg,#1A1819, #DFBA61, #8D4218, #733214, #37190B) repeat;
+    padding: 20px;
+    opacity: 0.8;
 }
-
-nav ul li {
-   / display: flex;
-    justify-content: flex-end;
-    width: auto;
-    float: left;
-    color: #fff;
-    
-    margin: 0.8em;
-    font-size: 1.5em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    list-style: none;
-}
-
 
 nav ul li a {
+    display: flex;
     text-decoration: none;
-    color: #bbb;
+    color: #1A1819;
+    font-size: 1.2em;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.7s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+a:link {
+    color:#1A1819
+}
+
+a:visited {
+    color: #DFBA61;
+    text-decoration: underline;
 }
 
 nav ul li a:hover {
+    color: #8D4218;
+    background-color: #DFBA61;    
+}
+
+::marker {
+    color: aqua;
+    font-size: 33px;
+}
+
+a:active {
     color: #b13030;
 }
 
-.corpo {
+.imagem_corpo {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    text-align: justify;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    justify-content: center;
+    /*align-items: center;*/
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    opacity: 0.8;
 }
 
-.origem do café {
+.imagem_corpo:hover {
+    /*opacity: 0.2;*/
+}
+
+/* Definir as propriedades do logo*/
+
+/* definição content */
+
+.texto {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /*justify-content: center;*/
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    padding: 10px;
+    /*align-items: center;
+    /*max-width: 100%;*/
+}
+
+h1, h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2em;
+    font-family: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#37190B;
+    /*text-align: center;*/
+    border-style: groove;
+    border: 5px solid #733214;
+    padding: 7px 15px 7px 15px;
+    text-shadow: 2px 2px 3px #341A0B;
+}
+
+p {
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic', 'Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    font-weight: normal;
+    color: #1A1819;
+    text-align: justify;
+    vertical-align: middle;
+    text-indent: 25px;
+    letter-spacing: 2px;
+    line-height: 1;
+    word-spacing: -0.5;
+    padding: 10px 7px 10px 7px;
+    /*width: 80%;*/
+}
+
+p::first-letter {
+    font-family: 'coffee';
+    color: #733214;
+    font-size: 60px;
+}
+
+.texto {
+    max-width: 80%;
+}
+
+#content {
+   flex: 1;
+   display: flex;
+   margin: 20px;
+}
+
+main {
+    background: #DFBA61;
+    background-image: url(../imagens/historia-do-cafe-310518-c\ -\ Copia\ background1.jpg);
+    background-origin: content-box;
+    border-radius: 20px;
+}
+
+sidebar {
+    background: #733214;
+    color: rgb(198, 206, 212);
+    opacity: 0.8;
+    width: 60%;
+    margin: 20px;
+    background-image: url("../imagens/origem_do_café_topo_small_rec.png");
+    border-radius: 0% 30px 30px 0px;
+}
+
+/* footer */
+
+.footer {
+    background-color: #733214;
+    color: #1A1819;  
+    /*position: fixed;*/
+    border-radius: 30px 30px 0px 0px;
+}
+
+footer:hover {
+    background-color: #8D4218;
+}
+
+.fa-solid {
+    color: #DFBA61;
+}
+
+/* animação flecha*/
+
+#animacao {
+    animation: is-bouncing 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) alternate infinite; /*pode usar ease no lugar do cubic-bezier*/
+    place-items: center;
+}
+
+@keyframes is-bouncing {
+   to {
+    transform: translateX(33px);
+   } 
 }
